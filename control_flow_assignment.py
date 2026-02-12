@@ -34,13 +34,13 @@ if type(input_order_amount)!=int:
 
 # # Task2:Process Multiple Orders
 
-# In[3]:
+# In[15]:
 
 
 #Task2.1 #for a list of order_amounts appply discount rule from task1
 order_amount=[1200,2500,800,1750,3000]
 print("Summary Table\n")
-print(f"{'Order Amount':<15} | {'Discount %':<12}| {'Final Amount':<12}")
+print("Order Amount  | Discount %  | Final Amount")
 print("-"*50)
 total_revenue=0.0
 for i in order_amount:
@@ -56,7 +56,7 @@ for i in order_amount:
     discount_amount=i*discount
     final_amount=i-discount_amount
     total_revenue+=final_amount #for task 2.2
-    print(f"Rs{i:<14.2f}| {discount:>10}% | Rs.{final_amount}")
+    print("Rs",i , "|", discount, "% | Rs.", final_amount)
 
 #Task2.2 Print total revenue after discounts
 print("\nTotal Revenue post applying discount on order amount is:",total_revenue)
@@ -67,16 +67,16 @@ print("\nTotal Revenue post applying discount on order amount is:",total_revenue
 
 # # Task3: User Menu
 
-# In[6]:
+# In[16]:
 
 
-order_amounts = []   # running list to store all orders
+order_amounts = []  
 
 while True:
     print("\n------ MENU ------")
-    print("Press 1 -> To Add order amount")
-    print("Press 2 -> To Show all orders and total after discount")
-    print("Press q -> To Quit")
+    print("Press 1 to Add order amount")
+    print("Press 2 to Show all orders and total after discount")
+    print("Press q to Quit")
     
     choice = input("Enter your choice: ")
 
@@ -111,7 +111,7 @@ while True:
                 final_price = i - (i * discount)
                 total += final_price
 
-                print(f"Order_amount: {i}, Discount: {discount}%, Final: {final_price}")
+                print("Order_amount:" ,i, "Discount:" , discount,"%", "Final:",final_price)
 
             print("Total payable amount:", total)
 
@@ -122,36 +122,24 @@ while True:
 
 # # Task 4:Loop conteol with conditions
 
-# In[8]:
+# In[17]:
 
 
 #Task 4.1 and 4.2 -->iterating over daily sales and calculating running totala nd finally dispalying total revenue 
 
 daily_sales = [200, 150, 0, 400, 50, -1, 300]
-
 total_sales = 0
-
 for sale in daily_sales:
-
-    # If corrupted data found, stop processing
-    if sale == -1:
-        print("Corrupted data found! Stopping processing.")
+   
+    if sale == -1: # If corrupted data then stop processing
         break
 
-    # If no sales that day, skip it
-    if sale == 0:
-        print("No sales today. Skipping.")
+    if sale == 0:# If no sales that day, skip it
         continue
 
-    # Valid positive sales
     total_sales += sale
-    print("Added daily_sale value of:", sale, "Running total is:", total_sales)
 
 print("\nFinal total sales:", total_sales)
 
 
 # In[ ]:
-
-
-
-
